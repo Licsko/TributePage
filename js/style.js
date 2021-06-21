@@ -27,6 +27,7 @@ for (let j = 0; j < galleryThumbnails.length; j++) {
         thumbnailsArea.innerHTML += createVideoTagForThumbnails(thumb.src,thumb.title);
       }
     });
+    displayArea.innerHTML = (galleryThumbnails[j].nodeName == 'IMG') ? createImageTag(galleryThumbnails[j].src,galleryThumbnails[j].alt) : createVideoTag(galleryThumbnails[j].src,galleryThumbnails[j].alt);
     showArrows();
     currentIndex = j;
   });
