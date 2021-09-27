@@ -370,9 +370,6 @@ footer {
         color:rgba(255, 255, 255, 1);
     }
 
-/* Styles for Modal/Lightbox */
-
-
 
 
 .on {
@@ -388,6 +385,11 @@ footer {
 .hide {
     display: none;
 }
+
+
+
+
+
 
 /* Style for LightBox Gallery */
 
