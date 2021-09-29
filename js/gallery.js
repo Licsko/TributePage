@@ -4,12 +4,6 @@
 const gallery = document.querySelector('.gallery-area');
 const galleryThumbnails = document.querySelectorAll('.gallery-area .small-thumbs');
 
-// Lightbox elements
-const lightBox = document.querySelector(".gallery-box-container");
-const thumbnailsArea = document.querySelector('.images');
-const thumbnails = thumbnailsArea.children;
-const displayArea = document.querySelector(".display-pic-area figure");
-const arrows = document.querySelectorAll(".arrows");
 
 
 // Jelenlegi indexszám
@@ -19,12 +13,12 @@ let currentIndex;
 for (let j = 0; j < galleryThumbnails.length; j++) {
   galleryThumbnails[j].addEventListener('click', () => {
     lightBox.style.display = 'block';
-    galleryThumbnails.forEach(thumb => {
+    galleryThumbnails.forEach((thumb, index, tomb) => {
       if (thumb.nodeName == 'IMG') {
-        thumbnailsArea.innerHTML += createImageTagForThumbnails(thumb.src,thumb.alt);
+        thumbnailsArea.innerHTML += createImageTagForThumbnails(thumb.src, thumb.alt, index);
       }
       if (thumb.nodeName == 'VIDEO') {
-        thumbnailsArea.innerHTML += createVideoTagForThumbnails(thumb.src,thumb.title);
+        thumbnailsArea.innerHTML += createVideoTagForThumbnails(thumb.src,thumb.title, index);
       }
     });
     removeActiveClasses();
@@ -36,55 +30,54 @@ for (let j = 0; j < galleryThumbnails.length; j++) {
 }
 
 
+function katt(pos) {
+  removeActiveClasses();
+  thumbnails[pos].classList.add("active");
+  displayArea.innerHTML = (galleryThumbnails[pos].nodeName == 'IMG') ? createImageTag(galleryThumbnails[pos].src,galleryThumbnails[pos].alt) : createVideoTag(galleryThumbnails[pos].src,galleryThumbnails[pos].alt);
+  showArrows();
+  currentIndex = pos;
+}
+
 // Tagkészítő függvények a Modalbox-ba
 
-let createImageTagForThumbnails = (src, alt) => {
+let createImageTagForThumbnails = (src, alt, index) => {
   let tag= `
-  <img class="thumbnails" src="${src}" alt="${alt}"  title="${alt}">
+  <img class="thumbnails" src="${src}" alt="${alt}"  title="${alt}" onclick="katt(${index})">
   `;
   return tag;
 }
-let createVideoTagForThumbnails = (src, alt) => {
+
+let createVideoTagForThumbnails = (src, alt, index) => {
   let tag= `
-  <video class="thumbnails" src="${src}"  title="${alt}"></video>   
+  <video class="thumbnails" src="${src}"  title="${alt}" onclick="katt(${index})"></video>   
   `;
   return tag;
 }
 
 
-for (let i = 0; i < thumbnails.length; i++) {
-    thumbnails[i].addEventListener("click", function () {
-    if(thumbnails[i].nodeName == 'VIDEO') {
-      removeActiveClasses();
-      thumbnails[i].classList.add("active");
-      displayArea.innerHTML = `
-      ${createVideoTag(thumbnails[i].src, thumbnails[i].title)}
-      `;
-    } else {
-      removeActiveClasses();
-      thumbnails[i].classList.add("active");
-      displayArea.innerHTML = `
-          ${createImageTag(thumbnails[i].src, thumbnails[i].alt)}
-          `;
-    }
-    showArrows();
-  });
-}
+// Lightbox elements
+const lightBox = document.querySelector(".gallery-box-container");
+const thumbnailsArea = document.querySelector('.images');
+const thumbnails = thumbnailsArea.children;
+const displayArea = document.querySelector(".display-pic-area figure");
+const arrows = document.querySelectorAll(".arrows");
 
 function nextPic(n) {
+  currentIndex = currentIndex < 0 ? 0 : currentIndex;
   currentIndex += n;
+  currentIndex = currentIndex >= thumbnails.length ? thumbnails.length-1 : currentIndex;
   if(thumbnails[currentIndex].nodeName == 'VIDEO') {
     removeActiveClasses();
     thumbnails[currentIndex].classList.add("active");
     displayArea.innerHTML = `
-    ${createVideoTag(thumbnails[currentIndex].src, thumbnails[currentIndex].title)}
+      ${createVideoTag(thumbnails[currentIndex].src, thumbnails[currentIndex].title)}
     `;
   } else {
     removeActiveClasses();
     thumbnails[currentIndex].classList.add("active");
     displayArea.innerHTML = `
-        ${createImageTag(thumbnails[currentIndex].src, thumbnails[currentIndex].alt)}
-        `;
+      ${createImageTag(thumbnails[currentIndex].src, thumbnails[currentIndex].alt)}
+    `;
   }
 }
 
@@ -101,6 +94,7 @@ function showArrows() {
 }
 
 function closeLightBox() {
+  displayArea.children[0].pause();
   thumbnailsArea.innerHTML = ""
   lightBox.style.display = "none";
 }
@@ -121,7 +115,6 @@ function jumpTo(pos) {
       ${createImageTag(thumbnails[pos].src, thumbnails[pos].alt)}
     `;
   }
-  
 }
 
 function createImageTag(src, alt) {
@@ -135,7 +128,7 @@ function createImageTag(src, alt) {
 
 function createVideoTag(src, alt) {
     let videoTag = `
-    <video src="${src}" controls></video>
+    <video src="${src}" controls autoplay></video>
     <figcaption>${alt}</figcaption>
     `;
     

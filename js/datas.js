@@ -22,53 +22,106 @@ const media = {
       search: "belépőkártya",
     },
     {
-      src: "img/ujsagcikk.jpg",
-      alt: "A képen, az eredeti újságcikk található. Az ELSŐ TALÁLKOZÁS című rovat tetején láthatjuk a Mamám jobbra, és testvérét Vilit balra",
-      search: "újságcikk",
+      src: "img/mama_en.jpg",
+      alt: "Mama és én egy vendégségben.",
+      search: "sanyika",
+    },
+    {
+      src: "img/mama-bontas.jpg",
+      alt: "Mama épp kicsomagolja az ajándékát. Ekkor új TV-t kapott.",
+      search: "ajándék",
+    },
+    {
+      src: "img/mama-kriszta-eskuvo.jpg",
+      alt: "Mama Kriszti esküvőjén.",
+      search: "esküvő",
+    },
+    {
+      src: "img/mama-kriszta-tomi-eskuvo.jpg",
+      alt: "Mama Krisztiék esküvőjén. Balról: Tomi, Mama, Kriszti.",
+      search: "esküvő",
+    },
+    {
+      src: "img/mama-kriszta.jpg",
+      alt: "Mama Krisztivel.",
+      search: "kriszti",
+    },
+    {
+      src: "img/unnepiteritek.jpg",
+      alt: "Így nézett ki egy ünnepi teríték Mamánál.",
+      search: "evés",
+    },
+    {
+      src: "img/zaba.jpg",
+      alt: "itt meg már eszünk is.",
+      search: "evés",
+    },
+    {
+      src: "img/mama-sanyi-harminc.jpg",
+      alt: "Egy nagy családi-, és baráti kép a 30. szülinapomról, amin Mama is ott volt.",
+      search: "sanyika",
+    },
+    {
+      src: "img/mama-virag-ballagas.jpg",
+      alt: "Mama Virággal, Virág ballagása után.",
+      search: "virág",
+    },
+    {
+      src: "img/mama-vivi-szalag.jpg",
+      alt: "Mama Vivi szalagavatóján.",
+      search: "vivi",
+    },
+    {
+      src: "img/mama-titi.jpg",
+      alt: "Titi felköszönti Mamát.",
+      search: "ajándék",
+    },
+    {
+      src: "img/mama-nevet.jpg",
+      alt: "Mama! Lehet tudni, hogy minek örülsz? :D",
+      search: "mama",
+    },
+    {
+      src: "img/mama-virag.jpg",
+      alt: "Mama Virággal.",
+      search: "virág",
+    },
+    {
+      src: "img/mama-vivike.jpg",
+      alt: "Mama Vivikével.",
+      search: "vivi",
+    },
+    {
+      src: "img/mama-kriszta2.jpg",
+      alt: "Mama Krisztivel.",
+      search: "kriszti",
+    },
+    {
+      src: "img/mama-vidam1.jpg",
+      alt: "Egy jó ízű, vidám beszélegtés a családdal.",
+      search: "család",
+    },
+    {
+      src: "img/mama-kriszta2.jpg",
+      alt: "Mama Krisztivel.",
+      search: "kriszti",
     },
   ],
   videos: [
     {
-      src: "vids/vid001.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
+      src: "vids/mama-deni.mp4",
+      alt: "Mama megsimogatja Denit.",
+      search: "deni",
+    },{
+      src: "vids/mama-deni.mp4",
+      alt: "Mama megsimogatja Denit.",
+      search: "deni",
+    },{
+      src: "vids/mama-deni.mp4",
+      alt: "Mama megsimogatja Denit.",
+      search: "deni",
     },
-    {
-      src: "vids/vid002.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid003.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid004.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid005.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid006.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid007.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-    {
-      src: "vids/vid008.mp4",
-      alt: "Egy üveg cseresznye befőtt Mamám kamrájában.",
-      search: "cserkó",
-    },
-  ],
+  ]
 };
 
 // Belépés a médiaanyagokhoz
