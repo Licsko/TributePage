@@ -297,6 +297,7 @@ h2 {
     width: 130px;
     padding: 30px;
     transition: width 800ms ease, background-color 800ms ease;
+    overflow-x: hidden;
 }
 .timelined {
     display: flex;
@@ -350,7 +351,7 @@ h2 {
     }
 
 .gallery-area {
-    margin-bottom: 10rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -405,7 +406,9 @@ footer {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
-        padding: 2rem 6rem 8rem 6rem;
+        padding: 2rem 6rem 2rem 6rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px dashed #fff;
     }
     footer .icon-urls {
         display: flex;
@@ -413,7 +416,7 @@ footer {
         justify-content: center;
     }
     footer .icon-urls ul {
-        width: 30%;
+        width: 35%;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;

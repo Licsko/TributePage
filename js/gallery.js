@@ -94,9 +94,14 @@ function showArrows() {
 }
 
 function closeLightBox() {
-  displayArea.children[0].pause();
-  thumbnailsArea.innerHTML = ""
-  lightBox.style.display = "none";
+  if (displayArea.children[0].nodeName == "VIDEO") {
+    displayArea.children[0].pause();
+    thumbnailsArea.innerHTML = ""
+    lightBox.style.display = "none";
+  } else {
+    thumbnailsArea.innerHTML = ""
+    lightBox.style.display = "none";
+  }
 }
 
 function jumpTo(pos) {
