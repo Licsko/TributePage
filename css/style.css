@@ -69,7 +69,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
-    #img-div {
+    .img-div {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -182,13 +182,13 @@ main {
         transform: scale(1);
         transition: transform 500ms ease-in;
     }
-        main .section-photo img {
+        main .section-photo .photo {
             width: 43vw;
             position: relative;
             box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.692);
             transition: box-shadow 500ms ease-in-out;
         }
-        main .section-photo:hover img {
+        main .section-photo:hover .photo {
             box-shadow: 6px 1.5rem 2rem -15px rgba(0, 0, 0, 0.692);
             transition: box-shadow 500ms ease-in-out;
         }
@@ -209,6 +209,50 @@ main {
             text-align: center;
             border: 1px solid rgba(0, 0, 0, 0.185)
         }
+    #img-div {
+        margin: 3rem auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        color: rgb(37, 37, 37);
+        font-style: italic;
+        transform: scale(0.96);
+        transition: transform 500ms ease-in;
+        width: max-content;
+    }
+    #image {
+        max-width: 43vw;
+        position: relative;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.692);
+        transition: box-shadow 500ms ease-in-out;
+    }
+    #img-div:hover {
+        cursor: default;
+        transform: scale(1);
+        transition: transform 500ms ease-in;
+    }
+    #img-div:hover #image {
+        box-shadow: 6px 1.5rem 2rem -15px rgba(0, 0, 0, 0.692);
+        transition: box-shadow 500ms ease-in-out;
+    }
+    #img-caption {
+        font-size: calc(0.6rem + .5vw);
+        position: absolute;
+        width: 43vw;
+        bottom: 0;
+        left:0;
+        background-color: #fff;
+        /* margin-top: -2.2rem; */
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.185);
+        text-shadow: none;
+    }
 h2 {
     font-size: 3.5rem;
     margin: 5rem 0 1rem 0;
